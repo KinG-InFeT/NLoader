@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="org.apache.cordova.nloader"
+    version="0.1.0">
+    <name>NLoader</name>
+    <description>Native Loader for Cordova Android</description>
+    <license>GPL v3</license>
+    <keywords>cordova,loader,loading,nloader</keywords>
+    <repo>https://github.com/KinG-InFeT/NLoader.git</repo>
+    <issue>https://github.com/KinG-InFeT/NLoader/issues</issue>
+
+    <js-module src="www/nloader.js" name="nloader">
+        <clobbers target="NLoader" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="NLoader" >
+                <param name="android-package" value="org.apache.cordova.nloader.NLoader"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/NLoader.java" target-dir="src/org/apache/cordova/nloader" />
+    </platform>
+
+</plugin>
