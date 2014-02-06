@@ -2,8 +2,6 @@
 By Luongo Vincenzo _ @KinG-InFeT
 
 
-
-test
 ## Installation the plugin
 
 ### Phonegap/Cordova v3.0.0 and later
@@ -33,7 +31,7 @@ NLoader.StartStop();
 
 ## CHANGELOG
 
-### 06/02/2014 (v0.1.0)
+### --/02/2014 (v0.1.0)
 * Initial release (Tested with Cordova 3.3.0, platform android v4.3.1 and 4.4.2)
 
 

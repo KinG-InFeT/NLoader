@@ -17,6 +17,7 @@ import org.apache.cordova.CallbackContext;
 
 import android.content.Intent;
 
+//Librerie richieste
 import android.app.LoaderManager;
 import android.app.ProgressDialog;
 
@@ -78,16 +79,16 @@ public class NLoader extends CordovaPlugin {
 		return true;
 	}
 	
+	//Avvio il loader
 	public void showWaitingDialog(String text) {
 		waitingDialog = ProgressDialog.show(this.cordova.getActivity(), "", text);
 	}
 	
 	public void hideWaitingDialog() {
-		if (waitingDialog != null) {
+		if (waitingDialog != null) { //Aperto? chiudilo
 			waitingDialog.dismiss();
-			//LOG.d("WaitingDialog", "Dialog dismissed");
 			waitingDialog = null;
-		} else {
+		} else {// altrimenti gestisco l'exeption e non eseguo niente
 			//LOG.d("WaitingDialog", "Nothing to dismiss");
 		}
 	}
