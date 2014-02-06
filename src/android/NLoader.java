@@ -63,8 +63,8 @@ public class NLoader extends CordovaPlugin {
 	public void StartLoader(String text, CallbackContext callbackContext) {
 	
 		//Default value
-		if(text == '') {
-			String text = "Please wait";
+		if(text == "") {
+			text = "Please wait";
 		}
 		
 		this.showWaitingDialog(text);
