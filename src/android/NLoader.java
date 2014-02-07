@@ -111,7 +111,7 @@ public class NLoader extends CordovaPlugin {
 		
 		//waitingDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
 		
-		waitingDialog.setIcon(R.drawable.shopper_icon);
+		waitingDialog.setIcon(R.drawable.icon);
 		
 		// FOR -> STYLE_HORIZONTAL
 		//waitingDialog.setProgress(0);
