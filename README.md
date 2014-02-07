@@ -16,7 +16,7 @@ cordova plugins add https://github.com/KinG-InFeT/NLoader.git
 * Call the plugin for run loader
 
 ```javascript
-var message = 'Loading...';
+var message = 'Loading...'; //Default message "Please wait"
 NLoader.StartLoader(message);
 ```
 
@@ -32,7 +32,7 @@ NLoader.StopLoader();
 
 ## CHANGELOG
 
-### --/02/2014 (v0.1.0)
+### 07/02/2014 (v0.1.0)
 * Initial release (Tested with Cordova 3.3.0, platform android v4.3.1 and 4.4.2)
 
 
