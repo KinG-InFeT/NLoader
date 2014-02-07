@@ -47,6 +47,8 @@ NLoader.StopLoader();
 ### 07/02/2014 (v0.2.0)
 * Adding personalization title
 * Added customization cancellation Touch
+* FIX runOnUiThread runnable on Activity
+* Implemented try/catch for JSON functions
 
 ### 06/02/2014 (v0.1.0)
 * Initial release (Tested with Cordova 3.3.0, platform android v4.3.1 and 4.4.2)

@@ -40,25 +40,31 @@ public class NLoader extends CordovaPlugin {
     }
 
 	@Override
-    public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-		
-		if (action.equals("startloader")) {
-			
-			JSONObject jo = args.getJSONObject(0);
-			
-			this.StartLoader(jo.getString("title"), jo.getString("text"), jo.getInt("cancelable"), callbackContext); 
-			
-        } else if(action.equals("stoploader")) {
-		
-			this.StopLoader(callbackContext);
-			
-		} else {
-            return false;
-        }
-		
-		callbackContext.success();
-		return true;
-		
+    public boolean execute(final String action, final JSONArray args, final CallbackContext callbackContext) throws JSONException {
+		 
+        cordova.getActivity().runOnUiThread(new Runnable() {
+            public void run() {
+            	if (action.equals("startloader")) {
+        			
+        			JSONObject jo;
+					
+        			try {
+        				jo = args.getJSONObject(0);
+						StartLoader(jo.getString("title"), jo.getString("text"), jo.getInt("cancelable"), callbackContext);
+					} catch (JSONException e) {
+						e.printStackTrace();
+					} 
+        			
+                } else if(action.equals("stoploader")) {
+        		
+        			StopLoader(callbackContext);
+        			
+        		} 
+        		
+        		callbackContext.success();
+            }
+        });
+        return true;
     }
 	
 	public void StartLoader(String title, String text, Integer cancelable, CallbackContext callbackContext) {
