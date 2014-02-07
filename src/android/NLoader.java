@@ -99,7 +99,7 @@ public class NLoader extends CordovaPlugin {
 		//Setto il titolo
 		if(title != "") {
 			waitingDialog.setTitle(title);
-		]
+		}
 		
 		//Setto di che tipologia deve essere la progressbar
 		waitingDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
