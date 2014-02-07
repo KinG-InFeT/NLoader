@@ -107,6 +107,7 @@ public class NLoader extends CordovaPlugin {
 		// Setto il titolo
 		if (title != "") {
 			waitingDialog.setTitle(title);
+			waitingDialog.setIcon(R.drawable.icon);
 		}
 
 		waitingDialog.setIndeterminate(false);
@@ -119,8 +120,6 @@ public class NLoader extends CordovaPlugin {
 
 		// waitingDialog.getWindow().setBackgroundDrawable(new
 		// ColorDrawable(0));
-
-		waitingDialog.setIcon(R.drawable.icon);
 
 		// FOR -> STYLE_HORIZONTAL
 		// waitingDialog.setProgress(0);

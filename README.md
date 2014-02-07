@@ -25,7 +25,7 @@ with your app id and save file
 * Call the plugin for run loader
 
 ```javascript
-var title = 'My App'; //Default title NULL (not view)
+var title = 'My App'; //Default title NULL (not view title and icon)
 var message = 'Loading...'; //Default message "Please wait"
 var cancelable = 1; //Default cancelable 0 => NO
 
@@ -49,6 +49,7 @@ NLoader.StopLoader();
 * Added customization cancellation Touch
 * FIX runOnUiThread runnable on Activity
 * Implemented try/catch for JSON functions
+* ADD not show icon and title when the title is not declared
 
 ### 06/02/2014 (v0.1.0)
 * Initial release (Tested with Cordova 3.3.0, platform android v4.3.1 and 4.4.2)
