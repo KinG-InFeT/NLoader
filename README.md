@@ -16,13 +16,14 @@ cordova plugins add https://github.com/KinG-InFeT/NLoader.git
 * Call the plugin for run loader
 
 ```javascript
-NLoader.StartLoader();
+var message = 'Loading...';
+NLoader.StartLoader(message);
 ```
 
 * Call the plugin for stop loader
 
 ```javascript
-NLoader.StartStop();
+NLoader.StopLoader();
 ```
 
 * FINISH :D
