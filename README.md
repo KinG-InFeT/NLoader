@@ -19,7 +19,7 @@ cordova plugins add https://github.com/KinG-InFeT/NLoader.git
 var title = 'My App'; //Default title NULL (not view)
 var message = 'Loading...'; //Default message "Please wait"
 var cancelable = 1; //Default cancelable 0 => NO
-NLoader.StartLoader(message, cancelable, title);
+NLoader.StartLoader(title, message, cancelable);
 ```
 
 * Call the plugin for stop loader

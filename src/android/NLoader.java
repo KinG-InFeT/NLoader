@@ -45,7 +45,7 @@ public class NLoader extends CordovaPlugin {
 			
 			JSONObject jo = args.getJSONObject(0);
 			
-			this.StartLoader(jo.getString("text"), jo.getString("cancelable"), jo.getString("title"), callbackContext); 
+			this.StartLoader(jo.getString("title"), jo.getString("text"), jo.getInt("cancelable"), callbackContext); 
 			
         } else if(action.equals("stoploader")) {
 		
@@ -60,14 +60,14 @@ public class NLoader extends CordovaPlugin {
 		
     }
 	
-	public void StartLoader(String text, Integer cancelable, String title, CallbackContext callbackContext) {
+	public void StartLoader(String title, String text, Integer cancelable, CallbackContext callbackContext) {
 	
 		//Default value
 		if(text == "") {
 			text = "Please wait";
 		}
 		
-		this.showWaitingDialog(text, cancelable, title);
+		this.showWaitingDialog(title, text, cancelable);
 		callbackContext.success();
 
 	}
@@ -78,7 +78,7 @@ public class NLoader extends CordovaPlugin {
 	}
 	
 	//Avvio il loader
-	public void showWaitingDialog(String text, Integer cancelable, String title) {
+	public void showWaitingDialog(String title, String text, Integer cancelable) {
 		//OLD
 		//waitingDialog = ProgressDialog.show(this.cordova.getActivity(), "", text);
 		
@@ -97,13 +97,16 @@ public class NLoader extends CordovaPlugin {
 		waitingDialog.setMessage(text);
 		
 		//Setto il titolo
-		waitingDialog.setTitle(title);
+		if(title != '') {
+			waitingDialog.setTitle(title);
+		]
 		
 		//Setto di che tipologia deve essere la progressbar
-		waitingDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+		waitingDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
 		
-		waitingDialog.setProgress(0);
-		waitingDialog.setMax(100);
+		// FOR -> STYLE_HORIZONTAL
+		//waitingDialog.setProgress(0);
+		//waitingDialog.setMax(100);
 		
 		//Appare
 		waitingDialog.show();
