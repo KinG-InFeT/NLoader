@@ -21,7 +21,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.phonegap.linkpass.R;
+import com.luongovincenzo.tools.R;
 
 //import android.provider.Settings;
 
