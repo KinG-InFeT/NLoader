@@ -13,8 +13,8 @@ var exec = require('cordova/exec');
 
 module.exports = {
 
-    StartLoader: function(text) {
-		var options = {"text": text};
+    StartLoader: function(text, cancelable, title) {
+		var options = {"text" : text, "cancelable" : cancelable, "title" : title};
         exec( null, null, 'NLoader', 'startloader', [options]);
     },
 	StopLoader: function() {
