@@ -69,14 +69,12 @@ public class NLoader extends CordovaPlugin {
 		
 		this.showWaitingDialog(text);
 		callbackContext.success();
-		return true;
 
 	}
 	
 	public void StopLoader(CallbackContext callbackContext) {
 		this.hideWaitingDialog();
 		callbackContext.success();
-		return true;
 	}
 	
 	//Avvio il loader
@@ -85,10 +83,14 @@ public class NLoader extends CordovaPlugin {
 	}
 	
 	public void hideWaitingDialog() {
+	
 		if (waitingDialog != null) { //Aperto? chiudilo
+		
 			waitingDialog.dismiss();
 			waitingDialog = null;
+			
 		} else {// altrimenti gestisco l'exeption e non eseguo niente
+		
 			//LOG.d("WaitingDialog", "Nothing to dismiss");
 		}
 	}
