@@ -34,7 +34,11 @@ NLoader.StopLoader();
 
 ## CHANGELOG
 
-### 07/02/2014 (v0.1.0)
+### 07/02/2014 (v0.2.0)
+* Adding personalization title
+* Added customization cancellation Touch
+
+### 06/02/2014 (v0.1.0)
 * Initial release (Tested with Cordova 3.3.0, platform android v4.3.1 and 4.4.2)
 
 
