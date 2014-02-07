@@ -13,12 +13,22 @@ By Luongo Vincenzo _ @KinG-InFeT
 cordova plugins add https://github.com/KinG-InFeT/NLoader.git
 ```
 
+* Go to the folder plugins/org.apache.cordova.nloader/src/android and open the NLoader.java file and replace this line
+
+```java
+import com.luongovincenzo.tools.R;
+```
+
+with your app id and save file
+
+
 * Call the plugin for run loader
 
 ```javascript
 var title = 'My App'; //Default title NULL (not view)
 var message = 'Loading...'; //Default message "Please wait"
 var cancelable = 1; //Default cancelable 0 => NO
+
 NLoader.StartLoader(title, message, cancelable);
 ```
 
