@@ -101,8 +101,16 @@ public class NLoader extends CordovaPlugin {
 			waitingDialog.setTitle(title);
 		}
 		
+		waitingDialog.setIndeterminate(false);
+		
 		//Setto di che tipologia deve essere la progressbar
 		waitingDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+		
+		waitingDialog.getWindow().setLayout(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+		
+		//waitingDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+		
+		waitingDialog.setIcon(R.drawable.shopper_icon);
 		
 		// FOR -> STYLE_HORIZONTAL
 		//waitingDialog.setProgress(0);
