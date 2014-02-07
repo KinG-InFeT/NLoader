@@ -97,7 +97,7 @@ public class NLoader extends CordovaPlugin {
 		waitingDialog.setMessage(text);
 		
 		//Setto il titolo
-		if(title != '') {
+		if(title != "") {
 			waitingDialog.setTitle(title);
 		]
 		
