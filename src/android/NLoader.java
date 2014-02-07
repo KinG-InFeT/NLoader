@@ -15,8 +15,6 @@ package org.apache.cordova.nloader;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
 
-import android.content.Intent;
-
 import android.app.ActionBar.LayoutParams;
 import android.app.ProgressDialog;
 
