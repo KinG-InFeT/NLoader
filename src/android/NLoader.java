@@ -17,13 +17,14 @@ import org.apache.cordova.CallbackContext;
 
 import android.content.Intent;
 
-//Librerie richieste
-import android.app.LoaderManager;
+import android.app.ActionBar.LayoutParams;
 import android.app.ProgressDialog;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import com.luongovincenzo.tools.R;
 
 
 //import android.provider.Settings;
