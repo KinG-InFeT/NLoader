@@ -13,7 +13,7 @@
 //    UIAlertView *NLoader;
 //}
 
-@interface NLoader () {
+@interface NLoader : CDVPlugin {
 	UIActivityIndicatorView *activityView;
     UIView *loadingView;
     UILabel *loadingLabel;
@@ -99,7 +99,7 @@
     loadingLabel.text = @"Loading...";
     [loadingView addSubview:loadingLabel];
  
-    [self.view addSubview:loadingView];
+    [self.NLoader addSubview:loadingView];
     [activityView startAnimating];
 }
 
