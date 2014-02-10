@@ -69,7 +69,7 @@
 	UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
 	spinner.center = CGPointMake(160, 240);
 	spinner.tag = 12;
-	[self.view addSubview:spinner];
+	[self.NLoader addSubview:spinner];
 	[spinner startAnimating];
 	[spinner release];
 }
@@ -79,7 +79,7 @@
     //    [self.NLoader dismissWithClickedButtonIndex:0 animated:YES];
     //    _NLoader = nil;
     //}
-	[[self.view viewWithTag:12] stopAnimating];
+	[[self.NLoader viewWithTag:12] stopAnimating];
 }
 
 @end
