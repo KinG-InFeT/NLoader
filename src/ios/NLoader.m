@@ -7,18 +7,12 @@
 //
 
 #import "NLoader.h"
-#import "QuartzCore/QuartzCore.h"
+//#import "QuartzCore/QuartzCore.h"
 
-//@interface NLoader () {
-//    UIAlertView *NLoader;
-//}
-
-@interface NLoader  : UIViewController {
-    UIActivityIndicatorView *activityView;
-    UIView *loadingView;
-    UILabel *loadingLabel;
-	UIAlertView *NLoader;
+@interface NLoader () {
+    UIAlertView *NLoader;
 }
+
  
 @property (nonatomic, retain) UIActivityIndicatorView * activityView;
 @property (nonatomic, retain) UIView *loadingView;
@@ -72,28 +66,12 @@
     //[indicator startAnimating];
     //[self.NLoader addSubview:indicator];
 	
-	
-	[super showNLoaderWithText];
- 
-     loadingView = [[UIView alloc] initWithFrame:CGRectMake(75, 155, 170, 170)];
-     loadingView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
-     loadingView.clipsToBounds = YES;
-     loadingView.layer.cornerRadius = 10.0;
- 
-     activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-     activityView.frame = CGRectMake(65, 40, activityView.bounds.size.width, activityView.bounds.size.height);
-    [loadingView addSubview:activityView];
- 
-    loadingLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 115, 130, 22)];
-    loadingLabel.backgroundColor = [UIColor clearColor];
-    loadingLabel.textColor = [UIColor whiteColor];
-    loadingLabel.adjustsFontSizeToFitWidth = YES;
-    loadingLabel.textAlignment = UITextAlignmentCenter;
-    loadingLabel.text = @"Loading...";
-    [loadingView addSubview:loadingLabel];
- 
-    [self.view addSubview:loadingView];
-    [activityView startAnimating];
+	UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+	spinner.center = CGPointMake(160, 240);
+	spinner.tag = 12;
+	[self.view addSubview:spinner];
+	[spinner startAnimating];
+	[spinner release];
 }
 
 -(void)hideNLoader {
@@ -101,8 +79,7 @@
     //    [self.NLoader dismissWithClickedButtonIndex:0 animated:YES];
     //    _NLoader = nil;
     //}
-	[activityView stopAnimating];
-	[loadingView removeFromSuperview];
+	[[self.view viewWithTag:12] stopAnimating];
 }
 
 @end
