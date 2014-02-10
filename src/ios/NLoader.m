@@ -9,27 +9,17 @@
 #import "NLoader.h"
 #import "QuartzCore/QuartzCore.h"
 
-//@interface NLoader () {
-//    UIAlertView *NLoader;
-//}
-
-@interface NLoader : CDVPlugin {
-	UIActivityIndicatorView *activityView;
-    UIView *loadingView;
-    UILabel *loadingLabel;
-	UIAlertView *NLoader;
+@interface NLoader () {
+    UIAlertView *NLoader;
 }
 
 //@interface NLoader  : CDVPlugin {
 //    UIActivityIndicatorView *activityView;
 //    UIView *loadingView;
 //    UILabel *loadingLabel;
-//		UIAlertView *NLoader;
+//	  UIAlertView *NLoader;
 //}
- 
-@property (nonatomic, retain) UIActivityIndicatorView *activityView;
-@property (nonatomic, retain) UIView *loadingView;
-@property (nonatomic, retain) UILabel *loadingLabel;
+
 
 @property (nonatomic, retain) UIAlertView *NLoader;
 -(void)showNLoaderWithText:(NSString*)text;

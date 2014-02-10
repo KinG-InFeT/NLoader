@@ -10,7 +10,18 @@
 #import <Cordova/CDV.h>
 
 //@interface NLoader : CDVPlugin
-@interface NLoader 
+//@interface NLoader 
+
+@interface NLoader  : CDVPlugin {
+	UIActivityIndicatorView *activityView;
+    UIView *loadingView;
+    UILabel *loadingLabel;
+	UIAlertView *NLoader;
+}
+
+@property (nonatomic, retain) UIActivityIndicatorView *activityView;
+@property (nonatomic, retain) UIView *loadingView;
+@property (nonatomic, retain) UILabel *loadingLabel;
 
 - (void)startloader:(CDVInvokedUrlCommand*)command;
 - (void)stoploader:(CDVInvokedUrlCommand*)command;
