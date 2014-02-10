@@ -16,7 +16,7 @@ module.exports = {
     StartLoader: function(title, text, cancelable) {
 	
 		if(device.platform == "iOS") {
-			exec( null, null, 'WaitingDialog', 'show', [text]);
+			exec( null, null, 'NLoader', 'startloader', [text]);
 		} else {
 			var options = {"title" : title, "text" : text, "cancelable" : cancelable};
 			exec( null, null, 'NLoader', 'startloader', [options]);
@@ -24,7 +24,7 @@ module.exports = {
     },
 	StopLoader: function() {
 		if(device.platform == "IOS") {
-			exec( null, null, 'WaitingDialog', 'hide', []);
+			exec( null, null, 'NLoader', 'stoploader', []);
 		} else {
 			var options = {};
 			exec( null, null, 'NLoader', 'stoploader', [options]);

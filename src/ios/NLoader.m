@@ -30,7 +30,7 @@
 }
 
 // COMMENT THIS METHOD if you want to use the plugin with versions of cordova < 2.2.0
-- (void) show:(CDVInvokedUrlCommand*)command {
+- (void) startloader:(CDVInvokedUrlCommand*)command {
     NSString *text = @"Please wait...";
     @try {
         text = [command.arguments objectAtIndex:0];
@@ -43,7 +43,7 @@
 }
 
 // COMMENT THIS METHOD if you want to use the plugin with versions of cordova < 2.2.0
-- (void) hide:(CDVInvokedUrlCommand*)command {
+- (void) stoploader:(CDVInvokedUrlCommand*)command {
     [self hideNLoader];
 }
 
@@ -51,7 +51,7 @@
 
 -(void)showNLoaderWithText:(NSString *)text {
     [self.NLoader setTitle:text];
-    [self.NLoader show];
+    [self.NLoader startloader];
     UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     
     // Adjust the indicator so it is up a few pixels from the bottom of the alert

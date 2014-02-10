@@ -11,7 +11,7 @@
 
 @interface NLoader : CDVPlugin
 
-- (void)show:(CDVInvokedUrlCommand*)command;
-- (void)hide:(CDVInvokedUrlCommand*)command;
+- (void)startloader:(CDVInvokedUrlCommand*)command;
+- (void)stoploader:(CDVInvokedUrlCommand*)command;
 
 @end
