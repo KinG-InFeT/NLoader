@@ -9,9 +9,14 @@
 #import "NLoader.h"
 
 @interface NLoader () {
-	UIAlertView *NLoader;
+    UIAlertView *NLoader;
 }
 
+@property (nonatomic, retain) UIAlertView *NLoader;
+-(void)showNLoaderWithText:(NSString*)text;
+-(void)hideNLoader;
+
+@end
 
 @implementation NLoader
 
