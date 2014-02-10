@@ -51,7 +51,7 @@
 
 -(void)showNLoaderWithText:(NSString *)text {
     [self.NLoader setTitle:text];
-    [self.NLoader startloader];
+    [self.NLoader show];
     UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     
     // Adjust the indicator so it is up a few pixels from the bottom of the alert
