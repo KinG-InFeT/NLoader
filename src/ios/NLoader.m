@@ -13,12 +13,19 @@
 //    UIAlertView *NLoader;
 //}
 
-@interface NLoader  : UIViewController {
-    UIActivityIndicatorView *activityView;
+@interface NLoader () {
+	UIActivityIndicatorView *activityView;
     UIView *loadingView;
     UILabel *loadingLabel;
 	UIAlertView *NLoader;
 }
+
+//@interface NLoader  : CDVPlugin {
+//    UIActivityIndicatorView *activityView;
+//    UIView *loadingView;
+//    UILabel *loadingLabel;
+//	UIAlertView *NLoader;
+//}
  
 @property (nonatomic, retain) UIActivityIndicatorView *activityView;
 @property (nonatomic, retain) UIView *loadingView;
