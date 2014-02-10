@@ -7,10 +7,21 @@
 //
 
 #import "NLoader.h"
+#import "QuartzCore/QuartzCore.h"
 
-@interface NLoader () {
-    UIAlertView *NLoader;
+//@interface NLoader () {
+//    UIAlertView *NLoader;
+//}
+
+@interface NLoader : UIViewController {
+    UIActivityIndicatorView *activityView;
+    UIView *loadingView;
+    UILabel *loadingLabel;
 }
+ 
+@property (nonatomic, retain) UIActivityIndicatorView * activityView;
+@property (nonatomic, retain) UIView *loadingView;
+@property (nonatomic, retain) UILabel *loadingLabel;
 
 @property (nonatomic, retain) UIAlertView *NLoader;
 -(void)showNLoaderWithText:(NSString*)text;
@@ -50,21 +61,47 @@
 #pragma mark - PRIVATE METHODS
 
 -(void)showNLoaderWithText:(NSString *)text {
-    [self.NLoader setTitle:text];
-    [self.NLoader show];
-    UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+	
+    //[self.NLoader setTitle:text];
+    //[self.NLoader show];
+    //UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     
     // Adjust the indicator so it is up a few pixels from the bottom of the alert
-    indicator.center = CGPointMake(self.NLoader.bounds.size.width / 2, self.NLoader.bounds.size.height - 50);
-    [indicator startAnimating];
-    [self.NLoader addSubview:indicator];
+    //indicator.center = CGPointMake(self.NLoader.bounds.size.width / 2, self.NLoader.bounds.size.height - 50);
+    //[indicator startAnimating];
+    //[self.NLoader addSubview:indicator];
+	
+	
+	[super showNLoaderWithText];
+ 
+     loadingView = [[UIView alloc] initWithFrame:CGRectMake(75, 155, 170, 170)];
+     loadingView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+     loadingView.clipsToBounds = YES;
+     loadingView.layer.cornerRadius = 10.0;
+ 
+     activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+     activityView.frame = CGRectMake(65, 40, activityView.bounds.size.width, activityView.bounds.size.height);
+    [loadingView addSubview:activityView];
+ 
+    loadingLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 115, 130, 22)];
+    loadingLabel.backgroundColor = [UIColor clearColor];
+    loadingLabel.textColor = [UIColor whiteColor];
+    loadingLabel.adjustsFontSizeToFitWidth = YES;
+    loadingLabel.textAlignment = UITextAlignmentCenter;
+    loadingLabel.text = @"Loading...";
+    [loadingView addSubview:loadingLabel];
+ 
+    [self.view addSubview:loadingView];
+    [activityView startAnimating];
 }
 
 -(void)hideNLoader {
-    if (_NLoader) {
-        [self.NLoader dismissWithClickedButtonIndex:0 animated:YES];
-        _NLoader = nil;
-    }
+    //if (_NLoader) {
+    //    [self.NLoader dismissWithClickedButtonIndex:0 animated:YES];
+    //    _NLoader = nil;
+    //}
+	[activityView stopAnimating];
+	[loadingView removeFromSuperview];
 }
 
 @end
