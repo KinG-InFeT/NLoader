@@ -70,7 +70,7 @@
     //[self.NLoader addSubview:indicator];
 	
 	
-	//[super showNLoaderWithText];
+	[super showNLoaderWithText];
  
      loadingView = [[UIView alloc] initWithFrame:CGRectMake(75, 155, 170, 170)];
      loadingView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
