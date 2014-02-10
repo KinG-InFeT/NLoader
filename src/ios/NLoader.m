@@ -55,7 +55,7 @@
     [self.NLoader show];
     UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     
-     Adjust the indicator so it is up a few pixels from the bottom of the alert
+    // Adjust the indicator so it is up a few pixels from the bottom of the alert
     indicator.center = CGPointMake(self.NLoader.bounds.size.width / 2, self.NLoader.bounds.size.height - 50);
     [indicator startAnimating];
     [self.NLoader addSubview:indicator];
