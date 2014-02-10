@@ -10,6 +10,7 @@
 #import <Cordova/CDV.h>
 
 //@interface NLoader : CDVPlugin
+@interface NLoader 
 
 - (void)startloader:(CDVInvokedUrlCommand*)command;
 - (void)stoploader:(CDVInvokedUrlCommand*)command;

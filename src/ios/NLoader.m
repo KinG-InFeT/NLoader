@@ -24,7 +24,7 @@
 //    UIActivityIndicatorView *activityView;
 //    UIView *loadingView;
 //    UILabel *loadingLabel;
-//	UIAlertView *NLoader;
+//		UIAlertView *NLoader;
 //}
  
 @property (nonatomic, retain) UIActivityIndicatorView *activityView;
@@ -108,6 +108,7 @@
     //    [self.NLoader dismissWithClickedButtonIndex:0 animated:YES];
     //    _NLoader = nil;
     //}
+	
 	[activityView stopAnimating];
 	[loadingView removeFromSuperview];
 }
