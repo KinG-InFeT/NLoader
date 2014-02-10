@@ -8,44 +8,62 @@
 
 #import "NLoader.h"
 
-@interface WaitingDialog () {
-    UIAlertView *waitingDialog;
+@interface NLoader () {
+    UIAlertView *NLoader;
 }
 
-@property (nonatomic, retain) UIAlertView *waitingDialog;
--(void)showWaitingDialogWithText:(NSString*)text;
--(void)hideWaitingDialog;
+@property (nonatomic, retain) UIAlertView *NLoader;
+-(void)showNLoaderWithText:(NSString*)text;
+-(void)hideNLoader;
 
 @end
 
-@implementation WaitingDialog
+@implementation NLoader
 
-@synthesize waitingDialog = _waitingDialog;
+@synthesize NLoader = _NLoader;
 
--(UIAlertView *)waitingDialog {
-    if (!_waitingDialog) {
-        _waitingDialog = [[UIAlertView alloc] initWithTitle:@"" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles: nil];
+-(UIAlertView *)NLoader {
+    if (!_NLoader) {
+        _NLoader = [[UIAlertView alloc] initWithTitle:@"" message:nil delegate:self cancelButtonTitle:nil otherButtonTitles: nil];
     }
-    return _waitingDialog;
+    return _NLoader;
+}
+
+// COMMENT THIS METHOD if you want to use the plugin with versions of cordova < 2.2.0
+- (void) show:(CDVInvokedUrlCommand*)command {
+    NSString *text = @"Please wait...";
+    @try {
+        text = [command.arguments objectAtIndex:0];
+    }
+    @catch (NSException *exception) {
+        DLog(@"Cannot read text argument")
+    }
+    
+    [self showNLoaderWithText:text];
+}
+
+// COMMENT THIS METHOD if you want to use the plugin with versions of cordova < 2.2.0
+- (void) hide:(CDVInvokedUrlCommand*)command {
+    [self hideNLoader];
 }
 
 #pragma mark - PRIVATE METHODS
 
--(void)showWaitingDialogWithText:(NSString *)text {
-    [self.waitingDialog setTitle:text];
-    [self.waitingDialog show];
+-(void)showNLoaderWithText:(NSString *)text {
+    [self.NLoader setTitle:text];
+    [self.NLoader show];
     UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     
     // Adjust the indicator so it is up a few pixels from the bottom of the alert
-    indicator.center = CGPointMake(self.waitingDialog.bounds.size.width / 2, self.waitingDialog.bounds.size.height - 50);
+    indicator.center = CGPointMake(self.NLoader.bounds.size.width / 2, self.NLoader.bounds.size.height - 50);
     [indicator startAnimating];
-    [self.waitingDialog addSubview:indicator];
+    [self.NLoader addSubview:indicator];
 }
 
--(void)hideWaitingDialog {
-    if (_waitingDialog) {
-        [self.waitingDialog dismissWithClickedButtonIndex:0 animated:YES];
-        _waitingDialog = nil;
+-(void)hideNLoader {
+    if (_NLoader) {
+        [self.NLoader dismissWithClickedButtonIndex:0 animated:YES];
+        _NLoader = nil;
     }
 }
 
