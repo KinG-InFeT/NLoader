@@ -49,7 +49,7 @@ NLoader.StopLoader();
 
 ## CHANGELOG
 
-### --/02/2014 (v0.3.0)
+### 10/02/2014 (v0.3.0)
 * Initial support for iOS
 
 ### 07/02/2014 (v0.2.0)
