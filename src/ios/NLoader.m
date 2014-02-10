@@ -9,11 +9,11 @@
 #import "NLoader.h"
 #import "QuartzCore/QuartzCore.h"
 
-//@interface NLoader () {
-//    UIAlertView *NLoader;
-//}
+@interface NLoader () {
+    UIAlertView *NLoader;
+}
 
-@interface NLoader : UIViewController {
+@interface RootViewController  : UIViewController {
     UIActivityIndicatorView *activityView;
     UIView *loadingView;
     UILabel *loadingLabel;
