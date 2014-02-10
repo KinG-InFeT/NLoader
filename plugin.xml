@@ -38,7 +38,7 @@
 		<header-file src="src/ios/NLoader.h" />
 		<source-file src="src/ios/NLoader.m" />
 		
-		<!--<framework src="QuartzCore.framework" />-->
+		<framework src="QuartzCore.framework" />
 	</platform>
 
 </plugin>
