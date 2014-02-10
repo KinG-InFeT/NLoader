@@ -14,11 +14,20 @@ var exec = require('cordova/exec');
 module.exports = {
 
     StartLoader: function(title, text, cancelable) {
-		var options = {"title" : title, "text" : text, "cancelable" : cancelable};
-        exec( null, null, 'NLoader', 'startloader', [options]);
+	
+		if(device.platform == "iOS") {
+			exec( null, null, 'WaitingDialog', 'show', [text]);
+		} else {
+			var options = {"title" : title, "text" : text, "cancelable" : cancelable};
+			exec( null, null, 'NLoader', 'startloader', [options]);
+		}
     },
 	StopLoader: function() {
-		var options = {};
-        exec( null, null, 'NLoader', 'stoploader', [options]);
+		if(device.platform == "IOS") {
+			exec( null, null, 'WaitingDialog', 'hide', []);
+		} else {
+			var options = {};
+			exec( null, null, 'NLoader', 'stoploader', [options]);
+		}
     },
 };

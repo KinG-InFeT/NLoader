@@ -1,8 +1,8 @@
 {
-    "version": "0.2.0",
+    "version": "0.3.0",
     "name": "org.apache.cordova.nloader",
     "cordova_name": "NLoader",
-    "description": "Native Loader for Cordova Android",
+    "description": "Native Loader for Cordova Android & iOS",
     "license": "GPL v3",
     "keywords": [
         "cordova",

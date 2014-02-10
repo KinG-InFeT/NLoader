@@ -1,5 +1,8 @@
-# NLoader plugin for Android/(Phonegap/Cordova) >= 3.0.0
+# NLoader plugin for Android and iOS (Phonegap/Cordova) >= 3.0.0
+
 By Luongo Vincenzo _ @KinG-InFeT
+
+Thanks @bormansquirrel
 
 
 ## Installation the plugin
@@ -32,6 +35,8 @@ var cancelable = 1; //Default cancelable 0 => NO
 NLoader.StartLoader(title, message, cancelable);
 ```
 
+NOTE: For the ios platform, title and cancelable parameters are not supported!
+
 * Call the plugin for stop loader
 
 ```javascript
@@ -43,6 +48,9 @@ NLoader.StopLoader();
 
 
 ## CHANGELOG
+
+### --/02/2014 (v0.3.0)
+* Initial support for iOS
 
 ### 07/02/2014 (v0.2.0)
 * Adding personalization title

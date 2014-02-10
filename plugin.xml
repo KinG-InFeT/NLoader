@@ -3,7 +3,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="org.apache.cordova.nloader"
-    version="0.2.0">
+    version="0.3.0">
     <name>NLoader</name>
     <description>Native Loader for Cordova Android</description>
     <license>GPL v3</license>
@@ -14,6 +14,8 @@
     <js-module src="www/nloader.js" name="nloader">
         <clobbers target="NLoader" />
     </js-module>
+	
+	<dependency id="org.apache.cordova.device" />
 
     <!-- android -->
     <platform name="android">
@@ -25,5 +27,16 @@
 
         <source-file src="src/android/NLoader.java" target-dir="src/org/apache/cordova/nloader" />
     </platform>
+	
+	<platform name="ios">
+		<config-file target="config.xml" parent="/*">
+			<feature name="NLoader">
+				<param name="ios-package" value="NLoader"/>
+			</feature>
+		</config-file>
+
+		<header-file src="src/ios/NLoader.h" />
+		<source-file src="src/ios/NLoader.m" />
+	</platform>
 
 </plugin>
