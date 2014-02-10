@@ -21,9 +21,9 @@
 //}
 
 
-@property (nonatomic, retain) UIAlertView *NLoader;
--(void)showNLoaderWithText:(NSString*)text;
--(void)hideNLoader;
+//@property (nonatomic, retain) UIAlertView *NLoader;
+//-(void)showNLoaderWithText:(NSString*)text;
+//-(void)hideNLoader;
 
 @end
 

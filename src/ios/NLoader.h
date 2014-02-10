@@ -19,6 +19,10 @@
 	UIAlertView *NLoader;
 }
 
+@property (nonatomic, retain) UIAlertView *NLoader;
+-(void)showNLoaderWithText:(NSString*)text;
+-(void)hideNLoader;
+
 @property (nonatomic, retain) UIActivityIndicatorView *activityView;
 @property (nonatomic, retain) UIView *loadingView;
 @property (nonatomic, retain) UILabel *loadingLabel;
