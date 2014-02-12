@@ -1,18 +1,20 @@
-//
-//  NLoader.h
-//
-//
-//  Created by Guido Sabatini in 2012
-//  Modified by @KinG-InFeT 10/02/2014
-//
-
+#import <Cordova/CDVPlugin.h>
 #import <Foundation/Foundation.h>
-#import <Cordova/CDV.h>
+#import <UIKit/UIKit.h>
+#import <AudioToolbox/AudioServices.h>
+#import <Cordova/NSDictionary+Extensions.h>
+#import "LoadingView.h"
 
-@interface NLoader : CDVPlugin
+@interface NLoader : CDVPlugin {
+	NLoaderView* loadingView;
+}
 
+@property (nonatomic, retain) NLoaderView* loadingView;
 
-- (void)startloader:(CDVInvokedUrlCommand*)command;
-- (void)stoploader:(CDVInvokedUrlCommand*)command;
+- (void)loadingStart: (CDVInvokedUrlCommand*) command;
+- (void)loadingStop: (CDVInvokedUrlCommand*) command;
+
+- (void)activityStart: (CDVInvokedUrlCommand*) command;
+- (void)activityStop: (CDVInvokedUrlCommand*) command;
 
 @end

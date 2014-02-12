@@ -2,7 +2,7 @@
 
 By Luongo Vincenzo _ @KinG-InFeT
 
-Thanks @bormansquirrel
+Thanks @bormansquirrel and @smithimage
 
 
 ## Installation the plugin
@@ -48,6 +48,9 @@ NLoader.StopLoader();
 
 
 ## CHANGELOG
+
+### 12/02/2014 (v0.4.0)
+* Add spinner and network spinner in iOS version
 
 ### 10/02/2014 (v0.3.0)
 * Initial support for iOS

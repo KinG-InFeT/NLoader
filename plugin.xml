@@ -3,9 +3,9 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="org.apache.cordova.nloader"
-    version="0.3.0">
+    version="0.4.0">
     <name>NLoader</name>
-    <description>Native Loader for Cordova Android</description>
+    <description>Native Loader for Cordova Android and iOS</description>
     <license>GPL v3</license>
     <keywords>cordova,loader,loading,nloader</keywords>
     <repo>https://github.com/KinG-InFeT/NLoader.git</repo>
@@ -35,10 +35,14 @@
 			</feature>
 		</config-file>
 
-		<header-file src="src/ios/NLoader.h" />
-		<source-file src="src/ios/NLoader.m" />
+		<header-file src="src/ios/NLoader.h"  compiler-flags="-fno-objc-arc" />
+        <source-file src="src/ios/NLoader.m" compiler-flags="-fno-objc-arc"  />
+        <header-file src="src/ios/LoadingView.h"  compiler-flags="-fno-objc-arc" />
+        <source-file src="src/ios/LoadingView.m" compiler-flags="-fno-objc-arc"  />
+        <header-file src="src/ios/UIColor-Expanded.h"  compiler-flags="-fno-objc-arc" />
+        <source-file src="src/ios/UIColor-Expanded.m" compiler-flags="-fno-objc-arc"  />
 		
-		<!--<framework src="QuartzCore.framework" />-->
+		<framework src="QuartzCore.framework" />
 	</platform>
 
 </plugin>
