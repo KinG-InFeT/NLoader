@@ -96,7 +96,7 @@
 			[self.loadingView removeView]; // the superview will release (see removeView doc), so no worries for below
 			self.loadingView = nil;
 		} else {
-			[self performSelector:@selector(loadingStop:) withObject:nil afterDelay:-1*diff];
+			[self performSelector:@selector(stoploader:) withObject:nil afterDelay:-1*diff];
 		}
 	}
 }
