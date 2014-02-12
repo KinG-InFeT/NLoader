@@ -16,13 +16,16 @@ Thanks @bormansquirrel and @smithimage
 cordova plugins add https://github.com/KinG-InFeT/NLoader.git
 ```
 
-* Go to the folder plugins/org.apache.cordova.nloader/src/android and open the NLoader.java file and replace this line
+* [ANDROID] Go to the folder plugins/org.apache.cordova.nloader/src/android and open the NLoader.java file and replace this line
 
 ```java
 import com.luongovincenzo.tools.R;
 ```
 
 with your app id and save file
+
+
+* [IOS] Beware, it could happen that the framework QuartzCore.framework not added correctly (BUG of cordova?) And for not having compilation problems, please add it manually.
 
 
 * Call the plugin for run loader
@@ -44,9 +47,6 @@ NLoader.StopLoader();
 ```
 
 * FINISH :D
-
-# WARNING
-QuartzCore.framework
 
 
 ## CHANGELOG
