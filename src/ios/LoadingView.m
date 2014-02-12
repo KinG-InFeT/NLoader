@@ -17,7 +17,7 @@
 #import "LoadingView.h"
 #import <QuartzCore/QuartzCore.h>
 
-@implementation NExLoadingView
+@implementation NLoaderView
 
 @synthesize boxLength;
 @synthesize strokeOpacity;
@@ -155,8 +155,8 @@
 			strokeColor:(UIColor*)strokeColor fullScreen:(BOOL)fullScreen labelText:(NSString*)labelText 
 		bounceAnimation:(BOOL)bounceAnimation boxLength:(CGFloat)boxLength
 {
-	NExLoadingView *loadingView =
-	[[[NExLoadingView alloc] initWithFrame:[aSuperview bounds]] autorelease];
+	NLoaderView *loadingView =
+	[[[NLoaderView alloc] initWithFrame:[aSuperview bounds]] autorelease];
 	if (!loadingView)
 	{
 		return nil;
@@ -248,11 +248,11 @@
 + (id)loadingViewInView:(UIView *)aSuperview
 {
 	return [self loadingViewInView:aSuperview 
-					 strokeOpacity:[NExLoadingView defaultStrokeOpacity] 
-				 backgroundOpacity:[NExLoadingView defaultBackgroundOpacity] 
-					   strokeColor:[NExLoadingView defaultStrokeColor] fullScreen:NO 
-						 labelText:[NExLoadingView defaultLabelText] bounceAnimation:NO 
-				  boxLength:[NExLoadingView defaultBoxLength]];
+					 strokeOpacity:[NLoaderView defaultStrokeOpacity] 
+				 backgroundOpacity:[NLoaderView defaultBackgroundOpacity] 
+					   strokeColor:[NLoaderView defaultStrokeColor] fullScreen:NO 
+						 labelText:[NLoaderView defaultLabelText] bounceAnimation:NO 
+				  boxLength:[NLoaderView defaultBoxLength]];
 }
 
 //

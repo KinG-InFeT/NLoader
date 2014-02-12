@@ -12,11 +12,12 @@
 	NSLog(@"Loading START");
 	
 	NSString *text = @"Please wait...";
+	
     @try {
         text = [command.arguments objectAtIndex:0];
     }
     @catch (NSException *exception) {
-        DLog(@"Cannot read text argument")
+        DLog(@"Cannot read text argument");
     }
 
 	if (self.loadingView != nil) {

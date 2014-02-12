@@ -16,7 +16,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NExLoadingView : UIView
+@interface NLoaderView : UIView
 {
 	NSTimeInterval minDuration;
 	NSDate* timestamp;
