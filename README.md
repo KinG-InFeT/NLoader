@@ -45,6 +45,8 @@ NLoader.StopLoader();
 
 * FINISH :D
 
+# WARNING
+QuartzCore.framework
 
 
 ## CHANGELOG

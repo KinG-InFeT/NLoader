@@ -11,27 +11,28 @@
 {
 	NSLog(@"Loading START");
 	
-	NSString *text = @"Please wait...";
-	
-    @try {
-        text = [command.arguments objectAtIndex:0];
-    }
-    @catch (NSException *exception) {
-        NSLog(@"Cannot read text argument");
-    }
-
-	if (self.loadingView != nil) {
-		return;
-	}
-	
-
 	CGFloat strokeOpacity, backgroundOpacity;
 	CGFloat boxLength = [NLoaderView defaultBoxLength];
 	BOOL fullScreen = YES;
 	BOOL bounceAnimation = NO;
 	
 	NSString* colorCSSString;
-	NSString* labelText;
+	NSString* labelText = @"Please wait...";
+	
+    @try {
+        labelText = [command.arguments objectAtIndex:0];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"Cannot read text argument");
+    }
+	
+	if (!labelText) {
+		labelText = [NLoaderView defaultLabelText];
+	}
+
+	if (self.loadingView != nil) {
+		return;
+	}
 
 	strokeOpacity = 0.00;
 	backgroundOpacity = 0.00;
@@ -48,14 +49,6 @@
 	
 	
 	colorCSSString = @"";
-	
-	//Da passare il parametro
-	// @var text
-	labelText = @"Loading...";
-
-	if (!labelText) {
-		labelText = [NLoaderView defaultLabelText];
-	}
 	
 	UIColor* strokeColor = [NLoaderView defaultStrokeColor];
 	
