@@ -17,7 +17,7 @@
         text = [command.arguments objectAtIndex:0];
     }
     @catch (NSException *exception) {
-        DLog(@"Cannot read text argument");
+        NSLog(@"Cannot read text argument");
     }
 
 	if (self.loadingView != nil) {
