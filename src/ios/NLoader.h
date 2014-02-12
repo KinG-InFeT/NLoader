@@ -11,8 +11,8 @@
 
 @property (nonatomic, retain) NLoaderView* loadingView;
 
-- (void)loadingStart: (CDVInvokedUrlCommand*) command;
-- (void)loadingStop: (CDVInvokedUrlCommand*) command;
+- (void)startloader: (CDVInvokedUrlCommand*) command;
+- (void)startloader: (CDVInvokedUrlCommand*) command;
 
 - (void)activityStart: (CDVInvokedUrlCommand*) command;
 - (void)activityStop: (CDVInvokedUrlCommand*) command;

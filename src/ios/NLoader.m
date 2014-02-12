@@ -6,81 +6,85 @@
 
 @synthesize loadingView;
 
-- (void)loadingStart:(CDVInvokedUrlCommand*) command
+- (void)startloader:(CDVInvokedUrlCommand*) command
 
 {
-    if([command.arguments count] > 0){
-        NSDictionary* optionsdic = [command.arguments objectAtIndex:0];
-    
-        if (self.loadingView != nil) {
-            return;
-        }
-        
-	
-        CGFloat strokeOpacity, backgroundOpacity;
-        CGFloat boxLength = [NLoaderView defaultBoxLength];
-        BOOL fullScreen = YES;
-        BOOL bounceAnimation = NO;
-        
-        NSString* colorCSSString;
-        NSString* labelText;
-
-        strokeOpacity = 0.00;
-        backgroundOpacity = 0.00;
-        
-        
-        id fullScreenValue = NULL;
-        
-        fullScreen = [fullScreenValue boolValue];
-        boxLength = fmax(boxLength, 1.00);
-        
-        
-        id bounceAnimationValue = NULL;
-        bounceAnimation = [bounceAnimationValue boolValue];
-        
-        
-        colorCSSString = @"";
-		
-		//Da passare il parametro
-        labelText = @"Loading...";
-
-        if (!labelText) {
-            labelText = [NLoaderView defaultLabelText];
-        }
-        
-        UIColor* strokeColor = [NLoaderView defaultStrokeColor];
-        
-        if (strokeOpacity <= 0) {
-            strokeOpacity = [NLoaderView defaultStrokeOpacity];
-        }
-        
-        if (backgroundOpacity <= 0) {
-            backgroundOpacity = [NLoaderView defaultBackgroundOpacity];
-        }
-        
-        if (colorCSSString) {
-            UIColor* tmp = [UIColor colorWithName:colorCSSString];
-            if (tmp) {
-                strokeColor = tmp;
-            } else {
-                tmp = [UIColor colorWithHexString:colorCSSString];
-                if (tmp) {
-                    strokeColor = tmp;
-                }
-            }
-        }
-        
-        self.loadingView = [NLoaderView loadingViewInView:[super viewController].view strokeOpacity:strokeOpacity
-                                           backgroundOpacity:backgroundOpacity
-                                                 strokeColor:strokeColor fullScreen:fullScreen labelText:labelText
-                                             bounceAnimation:bounceAnimation boxLength:boxLength];
-
-        NSRange minMaxDuration = NSMakeRange(2, 3600);
-
+	NSString *text = @"Please wait...";
+    @try {
+        text = [command.arguments objectAtIndex:0];
     }
+    @catch (NSException *exception) {
+        DLog(@"Cannot read text argument")
+    }
+
+	if (self.loadingView != nil) {
+		return;
+	}
+	
+
+	CGFloat strokeOpacity, backgroundOpacity;
+	CGFloat boxLength = [NLoaderView defaultBoxLength];
+	BOOL fullScreen = YES;
+	BOOL bounceAnimation = NO;
+	
+	NSString* colorCSSString;
+	NSString* labelText;
+
+	strokeOpacity = 0.00;
+	backgroundOpacity = 0.00;
+	
+	
+	id fullScreenValue = NULL;
+	
+	fullScreen = [fullScreenValue boolValue];
+	boxLength = fmax(boxLength, 1.00);
+	
+	
+	id bounceAnimationValue = NULL;
+	bounceAnimation = [bounceAnimationValue boolValue];
+	
+	
+	colorCSSString = @"";
+	
+	//Da passare il parametro
+	// @var text
+	labelText = @"Loading...";
+
+	if (!labelText) {
+		labelText = [NLoaderView defaultLabelText];
+	}
+	
+	UIColor* strokeColor = [NLoaderView defaultStrokeColor];
+	
+	if (strokeOpacity <= 0) {
+		strokeOpacity = [NLoaderView defaultStrokeOpacity];
+	}
+	
+	if (backgroundOpacity <= 0) {
+		backgroundOpacity = [NLoaderView defaultBackgroundOpacity];
+	}
+	
+	if (colorCSSString) {
+		UIColor* tmp = [UIColor colorWithName:colorCSSString];
+		if (tmp) {
+			strokeColor = tmp;
+		} else {
+			tmp = [UIColor colorWithHexString:colorCSSString];
+			if (tmp) {
+				strokeColor = tmp;
+			}
+		}
+	}
+	
+	self.loadingView = [NLoaderView loadingViewInView:[super viewController].view strokeOpacity:strokeOpacity
+									   backgroundOpacity:backgroundOpacity
+											 strokeColor:strokeColor fullScreen:fullScreen labelText:labelText
+										 bounceAnimation:bounceAnimation boxLength:boxLength];
+
+	NSRange minMaxDuration = NSMakeRange(2, 3600);
 }
 
-- (void)loadingStop: (CDVInvokedUrlCommand*) command
+- (void)startloader: (CDVInvokedUrlCommand*) command
 {
 	if (self.loadingView != nil) 
 	{
