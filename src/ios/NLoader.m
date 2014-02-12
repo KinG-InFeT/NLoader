@@ -9,6 +9,8 @@
 - (void)startloader:(CDVInvokedUrlCommand*) command
 
 {
+	NSLog(@"Loading START");
+	
 	NSString *text = @"Please wait...";
     @try {
         text = [command.arguments objectAtIndex:0];
@@ -88,7 +90,7 @@
 {
 	if (self.loadingView != nil) 
 	{
-		NSLog(@"Loading stop");
+		NSLog(@"Loading STOP");
 		NSTimeInterval diff = [[NSDate date] timeIntervalSinceDate:self.loadingView.timestamp] - self.loadingView.minDuration;
 		
 		if (diff >= 0) {
@@ -102,14 +104,14 @@
 
 - (void)activityStart: (CDVInvokedUrlCommand*) command
 {
-    NSLog(@"Activity starting");
+    NSLog(@"Activity START");
     UIApplication* app = [UIApplication sharedApplication];
     app.networkActivityIndicatorVisible = YES;
 }
 
 - (void)activityStop: (CDVInvokedUrlCommand*) command
 {
-    NSLog(@"Activitiy stopping ");
+    NSLog(@"Activitiy STOP");
     UIApplication* app = [UIApplication sharedApplication];
     app.networkActivityIndicatorVisible = NO;
 }
