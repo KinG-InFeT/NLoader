@@ -83,8 +83,6 @@
 									   backgroundOpacity:backgroundOpacity
 											 strokeColor:strokeColor fullScreen:fullScreen labelText:labelText
 										 bounceAnimation:bounceAnimation boxLength:boxLength];
-
-	NSRange minMaxDuration = NSMakeRange(2, 3600);
 }
 
 - (void)stoploader: (CDVInvokedUrlCommand*) command
