@@ -12,7 +12,7 @@
 @property (nonatomic, retain) NLoaderView* loadingView;
 
 - (void)startloader: (CDVInvokedUrlCommand*) command;
-- (void)startloader: (CDVInvokedUrlCommand*) command;
+- (void)stoploader: (CDVInvokedUrlCommand*) command;
 
 - (void)activityStart: (CDVInvokedUrlCommand*) command;
 - (void)activityStop: (CDVInvokedUrlCommand*) command;

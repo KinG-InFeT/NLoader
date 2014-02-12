@@ -84,7 +84,7 @@
 	NSRange minMaxDuration = NSMakeRange(2, 3600);
 }
 
-- (void)startloader: (CDVInvokedUrlCommand*) command
+- (void)stoploader: (CDVInvokedUrlCommand*) command
 {
 	if (self.loadingView != nil) 
 	{
