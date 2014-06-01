@@ -16,7 +16,7 @@ Thanks @bormansquirrel and @smithimage
 cordova plugins add https://github.com/KinG-InFeT/NLoader.git
 ```
 
-* [ANDROID] Go to the folder plugins/org.apache.cordova.nloader/src/android and open the NLoader.java file and replace this line
+* [ANDROID] Go to the folder **_plugins/org.apache.cordova.nloader/src/android_** and open the **NLoader.java** file and replace this line
 
 ```java
 import com.luongovincenzo.tools.R;
@@ -24,8 +24,10 @@ import com.luongovincenzo.tools.R;
 
 with your app id and save file
 
+    [BUILD PROBLEM?] Read This: https://github.com/KinG-InFeT/NLoader/issues/1
 
-* [IOS] Beware, it could happen that the framework QuartzCore.framework not added correctly (BUG of cordova?) And for not having compilation problems, please add it manually.
+
+* [IOS] Beware, it could happen that the framework **QuartzCore.framework** not added correctly (_BUG of cordova?_) And for not having compilation problems, please add it manually.
 
 
 * Call the plugin for run loader
@@ -38,7 +40,7 @@ var cancelable = 1; //Default cancelable 0 => NO
 NLoader.StartLoader(title, message, cancelable);
 ```
 
-NOTE: For the ios platform, title and cancelable parameters are not supported!
+**NOTE: For the ios platform, title and cancelable parameters are not supported!**
 
 * Call the plugin for stop loader
 
