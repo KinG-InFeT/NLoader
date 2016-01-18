@@ -15,7 +15,7 @@
         <clobbers target="NLoader" />
     </js-module>
 	
-	<dependency id="org.apache.cordova.device" />
+	<dependency id="cordova-plugin-device" />
 
     <!-- android -->
     <platform name="android">
